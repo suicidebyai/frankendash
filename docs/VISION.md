@@ -4,7 +4,7 @@
 
 ---
 
-## Mission
+## Midocs(vision): define FrankDash platform and Frankengine modulession
 
 Frankengine exists to help developers transform ideas into production-ready software while preserving every important architectural decision, implementation detail, and lesson learned.
 
