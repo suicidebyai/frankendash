@@ -1,28 +1,24 @@
-# Database Architecture
+# D.libber (Library & Persistence)
 
-> SQLite is the canonical source of truth for Frankengine.
+> D.libber is the canonical library and persistence layer for the system. The underlying storage implementation (e.g., SQLite) is an implementation detail and may change.
 
 ---
 
 # Philosophy
 
-Frankengine does not store documents.
+D.libber stores structured knowledge and persistent state for the workspace. It is distinct from the interface (Frankendash) and the reasoning/orchestration layer (FrankEngine).
 
-Frankengine stores knowledge.
-
-Markdown, JSON, PDF, and other formats are generated views of structured data.
-
-Every meaningful piece of information becomes a Knowledge Object.
+D.libber does not perform reasoning or presentation — it stores and organizes.
 
 ---
 
 # Design Principles
 
-- SQLite is the only canonical datastore.
+- D.libber is the canonical library/persistence layer.
+- The underlying storage (for now, SQLite) is an implementation detail.
 - Every object has a stable unique identifier.
 - Relationships are first-class citizens.
 - History is preserved.
-- Nothing is overwritten without versioning.
 - Export formats never become the source of truth.
 
 ---
@@ -35,33 +31,21 @@ Represents a software project or workspace.
 
 Examples:
 
-- Frankengine
+- FrankEngine
 - Mobile App
 - Internal Tool
 
 ---
 
-## Conversations
+## Conversations & Messages
 
-Stores AI interactions associated with a project.
-
-A conversation contains messages but also produces reusable knowledge.
-
----
-
-## Messages
-
-Individual prompts and responses.
-
-Messages are immutable.
+Conversations and messages capture AI interactions and prompts. These may be preserved as part of project history, but canonical knowledge is modeled as structured records in D.libber.
 
 ---
 
 ## Knowledge Objects
 
-The heart of Frankengine.
-
-A Knowledge Object represents a reusable engineering artifact.
+The heart of the system. A Knowledge Object represents a reusable engineering artifact.
 
 Examples:
 
@@ -82,132 +66,18 @@ Knowledge Objects exist independently of conversations.
 
 ---
 
-## Relationships
+## Relationships, Tags, Versioning
 
-Knowledge is connected.
-
-Relationships describe how objects relate.
-
-Examples:
-
-```
-Feature
-    implements
-Architecture
-
-Architecture
-    depends_on
-Database
-
-Task
-    belongs_to
-Sprint
-
-Decision
-    supersedes
-Decision
-```
-
-Relationships are directional and versioned.
-
----
-
-## Tags
-
-Flexible metadata for categorization.
-
-Examples:
-
-- backend
-- frontend
-- ai
-- ui
-- sqlite
-- security
-- roadmap
-
----
-
-## Decisions
-
-Stores architectural decisions.
-
-Each decision records:
-
-- title
-- rationale
-- alternatives
-- consequences
-- date
-- status
-
-Nothing important should live only inside commit messages.
-
----
-
-## Artifacts
-
-Generated outputs.
-
-Examples:
-
-- Markdown
-- JSON
-- PDF
-- HTML
-- Code Generation
-
-Artifacts are disposable.
-
-Knowledge Objects remain permanent.
-
----
-
-# Versioning
-
-Knowledge evolves.
-
-Every object supports:
-
-- version
-- created_at
-- updated_at
-- superseded_by
-- previous_version
-
-No destructive edits.
+Relationships describe how objects relate. Tags provide flexible metadata. Every object supports versioning and history tracking.
 
 ---
 
 # Search
 
-Search should operate across:
-
-- title
-- summary
-- body
-- tags
-- relationships
-- projects
-
-Future versions will include semantic search using embeddings.
-
----
-
-# Future Tables
-
-- Prompt Pipelines
-- Workflow Runs
-- AI Providers
-- Plugins
-- Agents
-- Embeddings
-- Graph Cache
+D.libber should support search across title, summary, body, tags, relationships, and projects. Future versions may include semantic search using embeddings.
 
 ---
 
 # Canonical Rule
 
-SQLite owns the truth.
-
-Everything else is generated from it.
+D.libber is the canonical library and persistence layer. The selected storage implementation (e.g., SQLite) is an implementation detail and not the architectural role itself.

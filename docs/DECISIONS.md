@@ -1,12 +1,12 @@
 # Architecture Decision Records
 
-> A history of important technical and product decisions made during Frankengine development.
+> A history of important technical and product decisions made during FrankEngine development.
 
 ---
 
 # Purpose
 
-This document records decisions that affect the direction of Frankengine.
+This document records decisions that affect the direction of FrankEngine.
 
 The goal is to preserve:
 
@@ -49,7 +49,7 @@ Date
 
 ### Context
 
-Frankengine evolved from earlier planning experiments and prototypes.
+FrankEngine evolved from earlier planning experiments and prototypes.
 
 The previous project history contained valuable ideas, but also duplicated documentation and changing architectural assumptions.
 
@@ -82,17 +82,15 @@ Accepted
 
 # Decision 0002
 
-## SQLite Is the Canonical Source of Truth
+## D.libber Is the Canonical Library / Persistence Layer (SQLite as current implementation)
 
 ### Context
 
-Traditional documentation systems store information as files.
-
-Frankengine requires persistent, searchable, connected knowledge.
+Traditional documentation systems store information as files. The platform requires persistent, searchable, connected knowledge.
 
 ### Decision
 
-SQLite will be the primary datastore.
+D.libber will be the architectural library/persistence layer. The underlying storage implementation (for now, SQLite) is an implementation detail and may change.
 
 Generated formats such as:
 
@@ -113,14 +111,14 @@ are exports and views, not canonical storage.
 
 Benefits:
 
-- Local ownership
-- Simple deployment
+- Clear separation between architecture and storage implementation
 - Searchable knowledge
 - Structured relationships
+- Persistent state
 
 Tradeoff:
 
-- Requires thoughtful schema design.
+- Requires thoughtful schema and library design.
 
 ### Status
 
@@ -138,7 +136,7 @@ AI conversations contain valuable information, but raw conversations are difficu
 
 ### Decision
 
-Frankengine stores normalized Knowledge Objects.
+FrankEngine stores normalized Knowledge Objects in D.libber.
 
 Examples:
 
@@ -173,80 +171,6 @@ Accepted
 
 ---
 
-# Decision 0004
-
-## Prompt Pipelines Generate Structured Data First
-
-### Context
-
-AI output is usually generated as unstructured text.
-
-Frankengine needs predictable, reusable artifacts.
-
-### Decision
-
-Prompt pipelines produce structured JSON before generating documents.
-
-### Alternatives
-
-Generate Markdown directly.
-
-### Consequences
-
-Benefits:
-
-- Multiple output formats
-- Validation
-- Better storage
-- Automation opportunities
-
-Tradeoff:
-
-- More upfront design work.
-
-### Status
-
-Accepted
-
----
-
-# Decision 0005
-
-## Local First Architecture
-
-### Context
-
-Users should own their projects and data.
-
-### Decision
-
-Frankengine should function locally without requiring cloud infrastructure.
-
-External services are optional integrations.
-
-### Alternatives
-
-Cloud-first SaaS architecture.
-
-### Consequences
-
-Benefits:
-
-- Privacy
-- Ownership
-- Offline capability
-- Lower operating costs
-
-Tradeoff:
-
-- Some collaboration features require additional design.
-
-### Status
-
-Accepted
-
----
-
 # Future Decisions
 
 Future records should cover:
@@ -265,4 +189,4 @@ Future records should cover:
 
 Every important decision should leave a trail.
 
-The future should understand not only what Frankengine became, but why.
+The future should understand not only what the platform became, but why.

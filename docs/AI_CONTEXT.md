@@ -1,42 +1,16 @@
 # AI Context
 
-> Context and operating guidelines for AI collaborators working on Frankengine.
+> Context and operating guidelines for AI collaborators working on Frankendash and FrankEngine.
 
 ---
 
 # Project Identity
 
-Frankengine is a local-first AI engineering workspace.
+Frankendash is a local-first AI engineering workspace. FrankEngine is the reasoning and orchestration module within the platform.
 
 Its purpose is to transform ideas into structured engineering knowledge and implementation plans.
 
-Frankengine is not simply a chatbot interface.
-
-It is a persistent knowledge system designed to help humans and AI collaborate on software development.
-
----
-
-# Historical Context
-
-Frankengine evolved from an application planning concept.
-
-The original goal was to help transform ideas into:
-
-- Product specifications
-- Architecture plans
-- Database designs
-- Roadmaps
-- Implementation strategies
-
-The project evolved into a broader knowledge operating system.
-
-The current architecture is based around:
-
-- Knowledge Objects
-- SQLite storage
-- Prompt pipelines
-- Modular engines
-- Local ownership
+Frankendash is not simply a chatbot interface; it is a persistent knowledge system designed to help humans and AI collaborate on software development.
 
 ---
 
@@ -44,7 +18,7 @@ The current architecture is based around:
 
 ## Knowledge Objects
 
-Knowledge Objects are structured pieces of reusable information.
+Knowledge Objects are structured pieces of reusable information. They are stored and organized by D.libber and orchestrated by FrankEngine, and presented by Frankendash.
 
 Examples:
 
@@ -57,53 +31,21 @@ Examples:
 - Prompts
 - Roadmaps
 
-They are the foundation of Frankengine's memory.
-
 ---
 
-## Planner Engine
+## FrankEngine
 
-The Planner Engine transforms ideas into structured engineering outputs.
+FrankEngine is the planner and orchestration module that transforms ideas into structured engineering outputs and coordinates with D.libber and Frankendash.
 
 Typical flow:
 
-```
-Idea
-
-↓
-
-Discovery
-
-↓
-
-Requirements
-
-↓
-
-Architecture
-
-↓
-
-Database
-
-↓
-
-Implementation Plan
-
-↓
-
-Knowledge Objects
-```
+Brainstorming → Ready → project-prep → formal planning → build gate
 
 ---
 
-## SQLite First
+## D.libber
 
-SQLite is the canonical source of truth.
-
-Do not introduce alternative storage systems without documenting the architectural reason.
-
-Exports are generated views.
+D.libber is the library/persistence layer. It stores canonical references, project metadata, workflow status/history, and searchable workspace knowledge. The underlying database (e.g., SQLite) is a current implementation.
 
 ---
 
@@ -132,86 +74,6 @@ Do not:
 
 ---
 
-## Explain Tradeoffs
-
-When suggesting changes:
-
-Include:
-
-- Why the change helps
-- What problem it solves
-- Alternatives considered
-- Possible downsides
-
----
-
 ## Prefer Incremental Changes
 
-Large rewrites should be avoided unless explicitly approved.
-
 Small, understandable commits are preferred.
-
----
-
-# Current Development Priorities
-
-The current order of work:
-
-1. Documentation foundation
-2. Database design
-3. Knowledge Engine
-4. Prompt Engine
-5. AI Gateway
-6. Desktop Application
-7. Plugin System
-
----
-
-# Technology Direction
-
-Planned stack:
-
-- Electron
-- React
-- TypeScript
-- Vite
-- SQLite
-- Drizzle ORM
-- OpenAI-compatible providers
-- Local AI models
-
-Technology choices should remain flexible but intentional.
-
----
-
-# Things Not To Do
-
-AI collaborators should not:
-
-- Create unnecessary abstraction layers
-- Add dependencies without reason
-- Optimize before understanding requirements
-- Replace architecture with generic templates
-- Assume SaaS/cloud-first requirements
-
----
-
-# Working Style
-
-Frankengine values:
-
-- Clear documentation
-- Transparent decisions
-- Small commits
-- Reusable knowledge
-- Long-term maintainability
-
----
-
-# Final Instruction
-
-Understand the system before changing the system.
-
-The goal is not just to make Frankengine work.
-
-The goal is to make Frankengine understandable.

@@ -1,16 +1,16 @@
-# Frankengine Architecture
+# Architecture
 
-> A local-first AI engineering platform built around structured knowledge, deterministic workflows, and modular components.
+> High-level architecture and system boundaries for Frankendash and its core modules.
 
 ---
 
 # Design Philosophy
 
-Frankengine is designed from the inside out.
+The system is designed with a clear separation of concerns:
 
-The engine owns the business logic.
-
-The user interface is simply one way to interact with the engine.
+- Frankendash (presentation): UI, workspace surfaces, navigation, dashboards, and workflow visibility.
+- FrankEngine (brain): reasoning, orchestration, workflow rules, project-prep triggers, automation, decisions about what happens next.
+- D.libber (library/persistence): structured records, relationships, metadata, workflow status and history.
 
 Every major subsystem should remain loosely coupled and independently testable.
 
@@ -22,135 +22,77 @@ Every major subsystem should remain loosely coupled and independently testable.
                 User
                   │
                   ▼
-        Desktop Application
-          (Electron + React)
+          Frankendash (UI / Workspace)
                   │
                   ▼
-          Planner Interface
+             FrankEngine (Core / Brain)
                   │
                   ▼
-          Frankengine Core
+               D.libber (Library / Persistence)
                   │
-      ┌───────────┼───────────┐
-      │           │           │
-      ▼           ▼           ▼
- Prompt Engine  AI Gateway  Knowledge Engine
-      │           │           │
-      └───────────┼───────────┘
                   ▼
-            SQLite Database
-                  │
-      ┌───────────┼───────────┐
-      ▼           ▼           ▼
- Markdown      JSON       Future APIs
+   Storage implementation (e.g., SQLite, other)
 ```
+
+Interaction model (canonical):
+
+Frankendash → FrankEngine → D.libber → FrankEngine → Frankendash
 
 ---
 
 # Core Components
 
-## Desktop Shell
+## Frankendash (Presentation)
 
 Responsible for:
 
-- Window management
-- Native menus
-- File system access
-- Local configuration
-- Plugin loading
+- UI
+- Workspace surfaces
+- Navigation
+- Dashboards
+- User interactions
+- Workflow visibility
+- Project and task presentation
+- Status and progress surfaces
 
-Technology:
-
-- Electron
+Frankendash should present and collect information, but it should not own core reasoning, orchestration logic, or persistent system state.
 
 ---
 
-## User Interface
+## FrankEngine (Core / Brain)
 
 Responsible for:
 
-- Project management
-- Blueprint editing
-- Search
-- Knowledge visualization
-- Settings
-
-Technology:
-
-- React
-- TypeScript
-- Vite
-
----
-
-## Frankengine Core
-
-Responsible for:
-
+- Reasoning
 - Workflow orchestration
 - Pipeline execution
-- Project state
-- Task coordination
+- Workflow rules
+- Project-preparation triggers
+- Automation
+- Decision logic
+- Scope and readiness evaluation
+- Coordination between the interface, library layer, and connected tools
 
-The Core contains no UI logic.
-
----
-
-## Prompt Engine
-
-Responsible for transforming ideas into structured engineering artifacts.
-
-Pipeline stages include:
-
-- Discovery
-- Requirements
-- Architecture
-- Database
-- Risks
-- Roadmap
-- Implementation
-
-Outputs are structured JSON.
+FrankEngine decides what should happen next and coordinates execution.
 
 ---
 
-## AI Gateway
-
-Provides a common interface for AI providers.
-
-Planned providers include:
-
-- OpenAI
-- Anthropic
-- Local LLMs
-- Future integrations
-
-The rest of Frankengine should never depend on a provider-specific SDK.
-
----
-
-## Knowledge Engine
+## D.libber (Library / Persistence)
 
 Responsible for:
 
-- Knowledge Objects
+- Persistent state
+- Structured records
 - Relationships
-- Search
-- Version history
-- Metadata
-- Future semantic indexing
+- Project and workspace metadata
+- Workflow status and history
+- Canonical references and identifiers
+- Stored outputs required by FrankEngine and Frankendash
+- Searchable workspace knowledge
+- Organized project and document references
+- Library-style retrieval and organization
 
-This is the heart of Frankengine.
-
----
-
-## Database
-
-SQLite is the canonical datastore.
-
-Nothing else is considered the source of truth.
-
-Markdown, JSON, PDFs, and reports are generated from the database.
+D.libber stores and organizes system knowledge and state. The underlying storage implementation (e.g., SQLite) may change without changing D.libber's role.
 
 ---
 
@@ -158,9 +100,7 @@ Markdown, JSON, PDFs, and reports are generated from the database.
 
 ## Local First
 
-The application should function without cloud services.
-
-Internet connectivity should only be required when communicating with optional AI providers.
+The application should function without cloud services. Internet connectivity should only be required when communicating with optional AI providers.
 
 ---
 
@@ -172,9 +112,7 @@ Every subsystem should be replaceable with minimal impact on the rest of the app
 
 ## Provider Agnostic
 
-AI providers are interchangeable.
-
-Business logic must never depend on a specific model vendor.
+AI providers are interchangeable. Business logic must never depend on a specific model vendor.
 
 ---
 
@@ -184,27 +122,6 @@ The same inputs should produce predictable workflow outputs whenever possible.
 
 ---
 
-## Extensible
-
-Future capabilities should be added through plugins, adapters, or new engine modules rather than modifying existing core systems.
-
----
-
-# Future Modules
-
-- Multi-agent orchestration
-- Semantic search
-- Plugin SDK
-- Architecture visualization
-- Workflow automation
-- Git integration
-- Knowledge graph visualization
-- Local model execution
-
----
-
 # Guiding Rule
 
-The engine owns the knowledge.
-
-The interface simply presents it.
+Frankendash presents. FrankEngine decides and orchestrates. D.libber stores and organizes.

@@ -4,13 +4,11 @@
 
 ---
 
-## Midocs(vision): define FrankDash platform and Frankengine modulession
+## Platform and Modules
 
-Frankengine exists to help developers transform ideas into production-ready software while preserving every important architectural decision, implementation detail, and lesson learned.
+Frankendash provides the workspace and presentation surfaces. FrankEngine is the core reasoning and orchestration module. D.libber is the library and persistence layer.
 
-Traditional AI chats are temporary.
-
-Frankengine turns conversations into permanent engineering knowledge.
+Frankendash exists to help developers transform ideas into production-ready software while preserving every important architectural decision, implementation detail, and lesson learned.
 
 ---
 
@@ -30,15 +28,13 @@ Software projects deserve persistent memory.
 
 ## The Solution
 
-Frankengine introduces a structured knowledge engine built around reusable Knowledge Objects.
+Frankendash introduces a structured knowledge approach built around reusable Knowledge Objects and a clear architectural separation:
 
-Every interaction becomes structured data.
+- Frankendash (presentation)
+- FrankEngine (reasoning & orchestration)
+- D.libber (library & persistence)
 
-Every blueprint becomes searchable.
-
-Every implementation becomes reusable.
-
-Every decision becomes traceable.
+Every interaction becomes structured data; documentation becomes one representation of that knowledge.
 
 ---
 
@@ -46,44 +42,25 @@ Every decision becomes traceable.
 
 ### Local First
 
-Users own their data.
-
-The application should function entirely offline except when communicating with optional AI providers.
+Users own their data. The application should function entirely offline except when communicating with optional AI providers.
 
 ---
 
 ### AI Provider Agnostic
 
-Frankengine should support multiple AI providers through a common abstraction layer.
-
-Examples include:
-
-- OpenAI
-- Anthropic
-- Local LLMs
-- Future providers
-
-Changing providers should never require changing the application architecture.
+FrankEngine should support multiple AI providers through a common abstraction layer. Changing providers should never require changing the application architecture.
 
 ---
 
 ### Knowledge Over Documents
 
-Traditional documentation is static.
-
-Frankengine stores structured knowledge.
-
-Documentation becomes one possible representation of that knowledge.
-
-SQLite is the canonical source of truth.
+Frankendash treats documents as views. D.libber is the canonical library/persistence layer (the underlying storage, such as SQLite, is an implementation detail).
 
 ---
 
 ### Engineering Before Code
 
-Architecture precedes implementation.
-
-Every major feature should begin with:
+Architecture precedes implementation. Every major feature should begin with:
 
 - Discovery
 - Requirements
@@ -95,40 +72,14 @@ Only then should code be written.
 
 ---
 
-### Complete Traceability
+## Typical Pipeline
 
-Every major decision should answer:
+Brainstorming → Ready → project-prep → formal planning → build gate
 
-- Why was this decision made?
-- What alternatives were considered?
-- What tradeoffs exist?
-- Which version introduced it?
-
-Future developers should never need to guess.
-
----
-
-## Long-Term Vision
-
-Frankengine evolves beyond a planning tool.
-
-It becomes an extensible engineering platform capable of:
-
-- Planning software
-- Managing projects
-- Preserving knowledge
-- Coordinating AI agents
-- Assisting implementation
-- Visualizing architecture
-- Generating documentation
-- Automating engineering workflows
+Ready indicates an idea has been refined enough for FrankEngine to begin project preparation.
 
 ---
 
 ## Guiding Principle
 
-Ideas are temporary.
-
-Knowledge is permanent.
-
-Frankengine exists to preserve the latter.
+Ideas are temporary. Knowledge is permanent. Frankendash exists to preserve the latter.
