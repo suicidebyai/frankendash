@@ -1,34 +1,240 @@
-# FrankEngine V2
-Status: working documentation scaffold — not implementation approval.
+# Frankengine
 
-FrankEngine is the backend host containing AI Reasoning and Frankenlib. Together they turn a user's intent into a bounded, reviewable plan and coordinate authorized execution. It owns the AI system, scope management, defaults resolution, custom instructions, provider-independent prompt workflows, and action decisions. Frankenlib owns durable records, indexes, relationships, provenance, and retrieval. Frankendash owns the UI and is outside this extraction.
+> Local-first AI operating system for planning, architecture, implementation, and persistent software knowledge.
 
-## Start here
-1. [Defaults](core/DEFAULTS.md): what is assumed, why, and what can be changed.
-2. [Constitution](core/AI_CONSTITUTION.md), [custom instructions](core/CUSTOM_INSTRUCTIONS.md), and [scope management](core/SCOPE_GUARD.md).
-3. [MVP](docs/PRODUCT_SPECIFICATION.md), [architecture and contracts](docs/ARCHITECTURE_AND_CONTRACTS.md), [acceptance and decisions](docs/ACCEPTANCE_AND_DECISIONS.md).
-4. [Source allocation](docs/SOURCES_AND_OWNERSHIP.md) and [project index](docs/PROJECT_INDEX.md).
+---
 
-## Current state
-Documentation only. No new repository, moved source files, running engine, enabled scheduler, model integration, or migration is implied. Existing work remains intact. The draft is based on the verified legacy repository snapshot and current ownership instructions; proposed API and runtime details still need approval.
+## Vision
 
-## Smallest useful outcome
-Submit an idea; resolve the applicable defaults and instructions; classify scope; produce a structured blueprint; review it; save an accepted version through Frankenlib with provenance. Blueprint approval does not authorize implementation.
+Frankengine is an AI-powered engineering workspace designed to transform ideas into complete software projects.
 
+Rather than acting as a chatbot, Frankengine acts as an engineering partner that captures ideas, generates architecture, produces implementation plans, and preserves knowledge in a structured, searchable format.
 
-## Expanded working scaffold
+Frankengine is designed for developers who want complete ownership of their to# FrankDash
 
-Use the [V2 project index](docs/PROJECT_INDEX.md) for Drive links to all documents. Added detail includes [programming contracts](docs/INTERFACE_CONTRACTS.md), [functions](docs/FUNCTIONS.md), [run lifecycle](docs/RUN_LIFECYCLE.md), [security](docs/SECURITY_AND_PERMISSIONS.md), [workflows](workflows/WORKFLOW_CATALOG.md), and reusable templates.
+> A local-first AI workspace operating system for planning, engineering, knowledge management, and automation.
 
-Defaults stay in core/DEFAULTS.md, unchanged. Existing constitution, custom instructions, scope guard, and source ownership records are preserved. Frankenlib is a module within the FrankEngine backend; its persistence/search implementation remains separately owned. The earlier hierarchy mismatch is resolved below; runtime and detailed interface approval remain separate gates.
+FrankDash is designed to transform conversations into structured, reusable knowledge while giving users complete ownership of their workspace and data.
 
-Proposed GitHub landing: a separate feat/frankengine-v2 review branch in suicidebyai/frankendash, with main untouched and no automatic merge. This Drive scaffold does not create that branch or start the build.
+Frankengine is the first core module of the platform.
 
-## Completed review draft — 2026-09-01
-FrankEngine is the backend host containing **AI Reasoning** and **Frankenlib** as sibling modules. AI Reasoning owns interpretation, instructions, scope and workflow decisions. Frankenlib owns persistence, search, indexes, provenance and versioned records. Host services own API/session enforcement, module wiring, shared connectors and credential-provider boundaries. Frankendash consumes the host contract.
-The hierarchy warning in the earlier scaffold is resolved against the existing Frankenlib boundary document and the user's current clarification. Runtime/tool versions, host deployment, final contract approval and build authorization remain separate decisions.
+---
 
-Read PRODUCT_SPECIFICATION for the slice, ARCHITECTURE_AND_CONTRACTS for composition, INTERFACE_CONTRACTS for payloads, ADAPTER_CONTRACTS for module ports, and ACCEPTANCE_AND_DECISIONS for checks. Use PROJECT_INDEX for the complete Drive inventory.
-First outcome: an offline, explicitly labeled template blueprint can be reviewed, accepted, saved through the Frankenlib contract, retrieved and exported. A memory-only test adapter proves contract behavior, not durability. No provider, real connector, scheduler or third-party plugin is required.
-Documentation readiness means every section has an owner, contract, failure outcome and verification path. Software readiness still requires implementation and observed test results. Existing defaults remain in core/DEFAULTS.md.
+# Vision
 
+Modern AI tools generate incredible ideas, but most of that knowledge disappears into chat history.
+
+FrankDash preserves that knowledge by organizing conversations into structured Knowledge Objects that become part of a permanent, searchable workspace.
+
+The goal is not to build another chatbot.
+
+The goal is to build an AI workspace that grows alongside its user.
+
+---
+
+# Core Principles
+
+- Local First
+- Developer First
+- Provider Agnostic
+- SQLite is Canonical
+- Knowledge Objects are the Primary Data Model
+- Markdown is a Presentation Layer
+- Modular Architecture
+- User Owns Their Data
+
+---
+
+# Architecture
+
+```
+User
+    │
+    ▼
+FrankDash Workspace
+    │
+    ├── Frankengine
+    ├── Knowledge Library
+    ├── Plugin System
+    ├── Dashboard
+    ├── Projects
+    ├── Journal
+    └── Automation
+            │
+            ▼
+SQLite
+```
+
+---
+
+# Repository Layout
+
+```
+core/
+    AI operating principles
+
+docs/
+    Product documentation
+
+templates/
+    Blueprint templates
+
+packages/
+    Application modules
+
+apps/
+    Desktop application
+
+scripts/
+    Development utilities
+
+---
+
+# Documentation
+
+Start here:
+
+- docs/VISION.md
+- docs/PRODUCT_SPECIFICATION.md
+- docs/ARCHITECTURE.md
+- docs/DATABASE.md
+- docs/ENGINEERING.md
+
+Core operating documents:
+
+- core/AI_CONSTITUTION.md
+- core/DEFAULTS.md
+- core/SCOPE_GUARD.md
+- core/PARKING_LOT.md
+- core/DECISION_HIERARCHY.md
+
+---
+
+# Current Status
+
+FrankDash is currently in active architectural development.
+
+The project is documentation-first to ensure long-term consistency before implementation.
+
+---
+
+# License
+
+MIT (planned)ols and data. Everything runs locally first, with optional AI providers and integrations.
+
+---
+
+## Core Principles
+
+- Local-first
+- Developer-first
+- AI-assisted, not AI-controlled
+- SQLite is the canonical data store
+- Knowledge Objects are the primary data model
+- Markdown is an export format, not the source of truth
+- Every architectural decision is documented
+- Every generated artifact is reusable
+
+---
+
+## Philosophy
+
+Software projects accumulate valuable knowledge over time, but traditional chat interfaces lose context as conversations grow.
+
+Frankengine solves this by converting conversations into structured Knowledge Objects that can be searched, related, versioned, and reused.
+
+Ideas become blueprints.
+
+Blueprints become implementation plans.
+
+Implementation plans become software.
+
+Software becomes knowledge.
+
+---
+
+## Architecture Overview
+
+```
+Idea
+    │
+    ▼
+Discovery
+    │
+    ▼
+Requirements
+    │
+    ▼
+Architecture
+    │
+    ▼
+Implementation Plan
+    │
+    ▼
+Knowledge Objects
+    │
+    ▼
+SQLite Database
+    │
+    ▼
+Exports
+(Markdown • JSON • PDF)
+```
+
+---
+
+## Planned Technology Stack
+
+| Layer | Technology |
+|--------|------------|
+| Desktop | Electron |
+| UI | React |
+| Language | TypeScript |
+| Build | Vite |
+| Database | SQLite |
+| ORM | Drizzle ORM (proposed) |
+| AI Providers | OpenAI, Anthropic, Local LLMs |
+| State | Zustand |
+| Testing | Vitest + Playwright |
+
+---
+
+## Repository Structure
+
+```
+docs/
+templates/
+packages/
+tools/
+scripts/
+examples/
+```
+
+---
+
+## Project Status
+
+Frankengine is currently in active architectural development.
+
+The repository is intentionally being built from first principles.
+
+Documentation is created before implementation so that engineering decisions remain deliberate, reviewable, and maintainable.
+
+---
+
+## License
+
+License to be added.
+## Project Status
+
+Frankengine is currently in active architectural development.
+
+The repository is intentionally being built from first principles.
+
+Documentation is created before implementation so that engineering decisions remain deliberate, reviewable, and maintainable.
+
+---
+
+## License
+
+License to be added.
