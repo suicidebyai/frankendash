@@ -1,0 +1,105 @@
+{
+  "repository": "suicidebyai/frankendash",
+  "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+  "reviewedAt": "2026-09-01",
+  "files": [
+    {
+      "path": "README.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "c43b54cef9119045f6815185f334367d9750d7c3",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/README.md"
+    },
+    {
+      "path": "core/AI_CONSTITUTION.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "8f4ed12dd98cf1aa531207d0c042d2899357f778",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/core/AI_CONSTITUTION.md"
+    },
+    {
+      "path": "core/DECISION_HIERARCHY.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "c5d770501534429d169f482268319a69bf803ffc",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/core/DECISION_HIERARCHY.md"
+    },
+    {
+      "path": "core/DEFAULTS.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "bdb0cd778b037fd73eb19cdcd86aafcaa63d5c81",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/core/DEFAULTS.md"
+    },
+    {
+      "path": "core/PARKING_LOT.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "f489ac443a36456070fa47769f2a95ca5b986642",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/core/PARKING_LOT.md"
+    },
+    {
+      "path": "core/SCOPE_GUARD.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "4301c7b27618ee98245533fbad1984d3d41c8388",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/core/SCOPE_GUARD.md"
+    },
+    {
+      "path": "docs/AI_CONTEXT.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "672691deec23da6e2761af25560589d15d95f894",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/docs/AI_CONTEXT.md"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "6a3fa14e0a7757cde9aa0cbd6b20c445f9e9972b",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/docs/ARCHITECTURE.md"
+    },
+    {
+      "path": "docs/DATABASE.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "516801ecea42ffbb9e601d3180654a981c7d068b",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/docs/DATABASE.md"
+    },
+    {
+      "path": "docs/DECISIONS.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "388ae442d8449ace28b7e2d99acff23fb65080b8",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/docs/DECISIONS.md"
+    },
+    {
+      "path": "docs/ENGINEERING.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "14075484eea7cd933c68d914dc9cb3dd2a367354",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/docs/ENGINEERING.md"
+    },
+    {
+      "path": "docs/GLOSSARY.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "d9d06f638cfcf4c82a10d8ffbd925c5de3f52f24",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/docs/GLOSSARY.md"
+    },
+    {
+      "path": "docs/PRODUCT_SPECIFICATION.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "c2a990558a228fea9e5bf91fd62b1db7dc0dca85",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/docs/PRODUCT_SPECIFICATION.md"
+    },
+    {
+      "path": "docs/PROMPT_ENGINE.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "1a4eb04afde8728c25e9ee9484b634cb145cb0a0",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/docs/PROMPT_ENGINE.md"
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "c272884289ff072fbe6740aefd2f5e7c29ed6cc0",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/docs/ROADMAP.md"
+    },
+    {
+      "path": "docs/VISION.md",
+      "commit": "eb01203c9ed343994f88f599d6ea252fad754b81",
+      "blobSha": "b1d18821e9fddb697a77b2164f7300a9d59acc26",
+      "url": "https://github.com/suicidebyai/frankendash/blob/eb01203c9ed343994f88f599d6ea252fad754b81/docs/VISION.md"
+    }
+  ]
+}
+
+
